@@ -432,6 +432,6 @@ angular
         "friend_count": 855,
         "$$hashKey": "02U"
       }
-    ]
+    ];
 
   });

@@ -10,7 +10,7 @@
 
   <h1>The <strong>facebook</strong> Friend Machine</h1>
 
-  
+
 
   <div class="friends">
     <form class="form-inline searchForm" role="form">
@@ -39,22 +39,19 @@
       </div>
     </form>
 
-    <ul>
-      <li class='friend'>
-        <img class="profile-pic" src='http://placebear.com/50/50.jpg'>
+    <ul ng-repeat="friend in friends">
+      <li class="friend">
+        <img class="profile-pic" src="">
 
-        <h3>Cali Fornia</h3>
+        <h3></h3>
 
         <div class="location">
-          Location: New Port Beach, California, United States
         </div>
 
         <div class="status">
-          Status: I hate the snow. I wish I was on the beach right now!!! <span class="hashtag">#ihateprovo</span>
         </div>
 
         <div class="num-friends">
-          Friends: 1,367
         </div>
       </li>
     </ul>
