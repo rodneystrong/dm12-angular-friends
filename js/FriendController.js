@@ -1,6 +1,10 @@
 angular
   .module('angFriends')
   .controller('FriendController', function($scope) {
+
+    var sortBy;
+    var sortDown;
+
     $scope.friends = [
       {
         "name": "Preston McNeil",
