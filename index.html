@@ -39,7 +39,7 @@
       </div>
     </form>
 
-    <ul ng-repeat="friend in friends | filter:friendFilter">
+    <ul ng-repeat="friend in friends | filter:friendFilter | orderBy: sortBy : sortDown">
       <li class="friend">
         <img class="profile-pic" ng-src="{{friend.pic_square}}">
 
