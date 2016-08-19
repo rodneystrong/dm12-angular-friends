@@ -36,15 +36,15 @@
 
 
         <label>
-          Descending <input type="radio" name="direction" checked>
+          Descending <input ng-model="direction" type="radio" name="direction" checked>
         </label>
         <label>
-          Ascending <input type="radio" name="direction">
+          Ascending <input ng-model="direction" type="radio" name="direction" value="reverse">
         </label>
       </div>
     </form>
 
-    <ul ng-repeat="friend in friends | filter: friendFilter | orderBy: sortName : sortDirection">
+    <ul ng-repeat="friend in friends | filter: friendFilter | orderBy: sortName: direction">
       <li class='friend'>
         <img class="profile-pic" ng-src='{{friend.pic_square}}'>
 
