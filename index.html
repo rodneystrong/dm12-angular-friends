@@ -34,6 +34,10 @@
           <option value="">Country</option>
         </select>
 
+        <!-- <select class="input-medium" ng-model="direction">
+            <option name="direction">Descending</option>
+            <option name="direction" value="reverse">Ascending</option>
+        </select> -->
 
         <label>
           Descending <input ng-model="direction" type="radio" name="direction" checked>
@@ -44,7 +48,7 @@
       </div>
     </form>
 
-    <ul ng-repeat="friend in friends | filter: friendFilter | orderBy: sortName: direction">
+    <ul ng-repeat="friend in friends | filter: friendFilter | orderBy: sortName:direction">
       <li class='friend'>
         <img class="profile-pic" ng-src='{{friend.pic_square}}'>
 
