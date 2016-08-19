@@ -34,11 +34,13 @@
           <option value="">Country</option>
         </select>
 
-        <select ng-model="sortDirection" class="input-medium">
-          <option value="+">Descending</option>
-          <option value="-">Ascending</option>
-        </select>
 
+        <label>
+          Descending <input type="radio" name="direction" checked>
+        </label>
+        <label>
+          Ascending <input type="radio" name="direction">
+        </label>
       </div>
     </form>
 
@@ -49,7 +51,7 @@
         <h3>{{friend.name}}</h3>
 
         <div class="location">
-          Location: {{friend.current_location.city}}, {{friend.current_location.state}}
+          Location: {{friend.current_location.city}}, {{friend.current_location.state | uppercase}}
         </div>
 
         <div class="status">
