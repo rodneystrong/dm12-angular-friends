@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="friendBook">
 <head>
   <title>Angular Friends</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body ng-controller="MainCtrl">
+
 
   <h1>The <strong>facebook</strong> Friend Machine</h1>
+
+  <h2>{{thisAppIsBroken}}</h2>
 
   <div class="friends">
     <form class="form-inline searchForm" role="form">
@@ -37,9 +40,9 @@
       </div>
     </form>
 
-    <ul>
+    <ul ng-repeat="friend in friends">
       <li class="friend">
-        <img class="profile-pic" src="http://placebear.com/50/50.jpg">
+        <img class="profile-pic" ng-src="{{friend.pic_square}}">
 
         <h3>Cali Fornia</h3>
 
