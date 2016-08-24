@@ -11,7 +11,12 @@ angular
     //in your service.
 
     this.getFriends = function() {
-      return $http.get('friend-data.json');
+      return $http.get('friend-data.json')
+        .then(function(response){
+          console.log(response);
+          console.log(response.status);
+          return response.data;
+        });
     }
 
   })

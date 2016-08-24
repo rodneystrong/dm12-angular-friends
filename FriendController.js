@@ -4,10 +4,8 @@ angular
     $scope.thisAppIsBroken = "Good job you suck";
 
     $scope.getFriends = function() {
-        friendService.getFriends().then(function(ok) {
-          console.log(ok);
-          console.log(ok.status);
-          $scope.friends = ok.data;
+        friendService.getFriends().then(function(friends) {
+          $scope.friends = friends;
         });
     }
 

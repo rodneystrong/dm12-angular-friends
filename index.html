@@ -21,15 +21,16 @@
         <!-- STEP 5: Get rid of the one above when you uncomment the below-->
 
         <input ng-model="friendFilter.name" class="form-control" placeholder="Search Name">
-        <input ng-model="friendFilter.current_location.name" class="form-control" placeholder="Search Location">
+
+        <input ng-model="friendFilter.current_location.state" class="form-control" placeholder="Search Location">
 
 
-        <select ng-model="sortBy" class="input-medium">
-          <option value="name">Name</option>
-          <option value="friend_count">#Friends</option>
-          <option value="current_location.city">City</option>
-          <option value="current_location.state">State</option>
-          <option value="current_location.country">Country</option>
+        <select class="input-medium">
+          <option>Name</option>
+          <option>#Friends</option>
+          <option>City</option>
+          <option>State</option>
+          <option>Country</option>
         </select>
 
         <select ng-model="sortDown" class="input-medium">
@@ -40,19 +41,20 @@
       </div>
     </form>
 
-    <ul ng-repeat="friend in friends">
+    <ul ng-repeat="friend in friends | filter: friendFilter">
       <li class="friend">
         <img class="profile-pic" ng-src="{{friend.pic_square}}">
 
         <h3>{{friend.name}}</h3>
 
         <div class="location">
-          Location: {{friend.current_location.city}}, {{friend.current_location.state}}, {{friend.current_location.country}}
+          Location: {{friend.current_location.city}}, {{friend.current_location.state}}
         </div>
 
-        <div class="status">
-          Status: {{friend.status.message}}
-        </div>
+        <!-- <div class="status">
+          Status: I hate the snow. I wish I was on the beach right now!!! <span class="hashtag">#ihateprovo</span>
+        </div> -->
+
 
         <div class="num-friends">
           Friends: {{friend.friend_count}}
