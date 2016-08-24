@@ -17,12 +17,12 @@
     <form class="form-inline searchForm" role="form">
       <div class="form-group">
 
-        <input class="form-control" placeholder="Search Anything About Your Friends">
+        <!-- <input ng-model="friendFilter" class="form-control" placeholder="Search Anything About Your Friends"> -->
         <!-- STEP 5: Get rid of the one above when you uncomment the below-->
-          <!--
-        <input class="form-control" placeholder="Search Name">
-        <input class="form-control" placeholder="Search Location">
-          -->
+
+        <input ng-model="friendFilter.name" class="form-control" placeholder="Search Name">
+        <input ng-model="friendFilter.current_location.state" class="form-control" placeholder="Search Location">
+
 
         <select class="input-medium">
           <option>Name</option>
@@ -40,7 +40,7 @@
       </div>
     </form>
 
-    <ul ng-repeat="friend in friends">
+    <ul ng-repeat="friend in friends | filter: friendFilter">
       <li class="friend">
         <img class="profile-pic" ng-src="{{friend.pic_square}}">
 
